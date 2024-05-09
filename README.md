@@ -19,7 +19,7 @@ The log will be saved in the Job folder, where you can view the search process a
 
 #### Best structure searched
 
-![image-20240509162220502](imgs/image-20240509162220502.png)
+![image-20240509162220502](img/image-20240509162220502.png)
 
 The structure of ha-net-a1, with 94.79% accuracy on cifar10, has excellent robustness under multiple attacks.
 
