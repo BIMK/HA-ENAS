@@ -1,0 +1,41 @@
+NUM_GPUS: 1
+RNG_SEED: 2
+SPACE:
+  NAME: 'camnas'
+LOADER:
+  DATASET: 'cifarn10_224'
+  NUM_CLASSES: 10
+  DATA_PATH: "../data/CIFAR10"
+  BATCH_SIZE: 16
+  NUM_WORKERS: 4
+  USE_VAL: True
+OPTIM:
+  BASE_LR: 0.1
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 0.0005
+  WARMUP_EPOCH: 5
+  MAX_EPOCH: 300
+  WARMUP_FACTOR: 0.1
+  GRAD_CLIP: 5.
+  LR_POLICY: "step"
+  NESTEROV: True
+SUPERNET_CFG:
+  RATIO: [ 3, 4, 6, 3 ]
+  SANDWICH_NUM: 5   #采样的子网数目 ，conv + att + mlp + 2 * 随机采样
+
+# logger的输出频率
+PRINT_FREQ: 10
+
+CONV:
+  EXPANSION: 4
+  CHANNELS: [ 64, 128, 256, 512 ]
+ATT:
+  HEADS: [ 1, 2, 4, 8 ]
+MLP:
+  PATCH_DIMS: [ 3136, 784, 196, 49 ]
+  EXP_TOKENS: [ 0.25, 0.5, 4, 8 ]
+  EXP: [ 8, 4, 4, 2 ]
+RESUME: False
+CKPT_PTH: "checkpoints/HA_Supernet.pth"
+
+
