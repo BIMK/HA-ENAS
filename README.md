@@ -43,6 +43,24 @@ python validation/transfer_attack_test.py --batch_size 32 --test_model HA_Net
 
 You can download checkpoints [here](https://drive.google.com/drive/folders/1x_PL5bmKxKHQYN8peaV7gY41lys7pA5y?usp=sharing)，and attacked dataset [here](https://drive.google.com/file/d/1sHvsOLv16uvYZg07zmg9dWDi9Eeo6wIh/view?usp=sharing).
 
+### Custom encoded HA-Net
+
+You can add a custom encoded HA-Net after line 125 of `validation/hanet/hanet.py`, written as follows. And reference the network for training and testing in `validation/hanet_train.py` and `validation/hanet_test.py`
+
+```python
+def HA_Net_custom(pretrained=False, **kwargs):
+    # change your code here
+    encodings = [[2, 1, 2], [0, 1, 2, 2], [0, 0, 0, 0, 0, 0], [0, 0, 0]]
+    model = HaNet(encoding=encodings)
+    if pretrained:
+        checkpoint_path = 'checkpoints/hanet_custom.pth'
+        checkpoint = torch.load(checkpoint_path)['state_dict']
+        model.load_state_dict(checkpoint)
+    print(model)
+    return model
+```
+
+
 ### Citations
 
 ```
