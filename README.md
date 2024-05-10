@@ -42,3 +42,15 @@ python validation/transfer_attack_test.py --batch_size 32 --test_model HA_Net
 + You can modify the test_model to select the networks you want to test, the optional parameters are HA_Net,resnet50,vit and mixer. you need to put the weights of these networks in the checkpoints folder before you test them.
 
 You can download checkpoints [here](https://drive.google.com/drive/folders/1x_PL5bmKxKHQYN8peaV7gY41lys7pA5y?usp=sharing)，and attacked dataset [here](https://drive.google.com/file/d/1sHvsOLv16uvYZg07zmg9dWDi9Eeo6wIh/view?usp=sharing).
+
+### Citations
+
+```
+@article{
+  title={Hybrid Architecture-based Evolutionary Robust Neural Architecture Search},
+  author={Shangshang Yang, Xiangkun Sun, Ke Xu, Yuanchao Liu, Ye Tian, Member, IEEE and Xingyi Zhang, Senior Member, IEEE},
+  journal={IEEE Transactions on Emerging Topics in Computational Intelligence},
+  year={2024}
+}
+```
+
